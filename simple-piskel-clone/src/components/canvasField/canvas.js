@@ -1,4 +1,6 @@
-import { canvas } from '../elements';
+import elements from '../elements';
+
+const { canvas } = elements;
 
 export default function draw() {
   const ctx = canvas.getContext('2d');
