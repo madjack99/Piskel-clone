@@ -41,6 +41,11 @@
       background-color: $grey;
       background-image: url('../assets/images/icons-sprite.png');
       background-repeat: no-repeat;
+
+      &:hover {
+        cursor: pointer;
+        border: 2px solid $yellow;
+      }
     }
 
     .pencil {
@@ -56,6 +61,25 @@
     }
     .stroke {
       background-position: -55px -145px;
+    }
+  }
+
+  .color {
+    display: flex;
+
+    .label {
+      width: 35px;
+      height: 35px;
+      border: 2px solid $grey;
+
+      &:hover {
+        cursor: pointer;
+        border-color: $yellow;
+      }
+    }
+
+    .color__item {
+      display: none;
     }
   }
 }
