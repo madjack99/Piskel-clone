@@ -1,0 +1,15 @@
+.header {
+  background: red;
+  display: flex;
+  justify-content: space-between;
+
+  .header__title {
+    font-size: 2rem;
+    padding: 5px 10px;
+  }
+
+  .sign-in {
+    font-size: 1.3rem;
+    margin: 5px 10px;
+  }
+}

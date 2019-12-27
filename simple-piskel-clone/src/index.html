@@ -4,9 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css"
+    />
     <title>simple-piskel-clone</title>
   </head>
   <body>
-    <h1>Test</h1>
+    <header class="header">
+      <h1 class="header__title">PISKEL</h1>
+      <button class="sign-in">Sign in</button>
+    </header>
+    <main class="main">
+      <section class="tools">
+        <div class="size">
+          <div class="size__one size__item"></div>
+          <div class="size__two size__item"></div>
+          <div class="size__three size__item"></div>
+          <div class="size__four size__item"></div>
+        </div>
+        <div class="draw">
+          <button class="pencil">Pencil</button>
+          <button class="bucket">Bucket</button>
+          <button class="eraser">Eraser</button>
+          <button class="stroke">Stroke</button>
+        </div>
+        <div class="color">
+          <div class="color__primary">Primary color</div>
+          <div class="color__secondary">Secondary color</div>
+        </div>
+      </section>
+      <section class="frames">Frames</section>
+      <section class="field">Field</section>
+      <section class="preview">Preview</section>
+    </main>
   </body>
 </html>
