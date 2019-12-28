@@ -5,12 +5,19 @@ const secondaryColorLabel = document.querySelector('.secondary__label');
 const primaryColorInput = document.querySelector('.color__primary');
 const secondaryColorInput = document.querySelector('.color__secondary');
 
+const input32 = document.querySelector('.input-32');
+const input64 = document.querySelector('.input-64');
+const input128 = document.querySelector('.input-128');
+
 const elements = {
   canvas,
   primaryColorLabel,
   secondaryColorLabel,
   primaryColorInput,
   secondaryColorInput,
+  input32,
+  input64,
+  input128,
 };
 
 export default elements;
