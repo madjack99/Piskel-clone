@@ -1,7 +1,9 @@
 @import './variables';
 @import './header';
 @import './tools';
+@import '../components/tools/colorSelection/colors';
 @import '../components/canvasField/canvas/canvas';
+@import '../components/canvasField/sizeSelection/sizeSelection';
 
 * {
   box-sizing: border-box;

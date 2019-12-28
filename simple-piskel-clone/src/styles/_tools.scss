@@ -64,32 +64,4 @@
       background-position: -55px -145px;
     }
   }
-
-  .color {
-    display: flex;
-    padding: 5px 0;
-
-    .label {
-      width: 35px;
-      height: 35px;
-      border: 2px solid $grey;
-
-      &:hover {
-        cursor: pointer;
-        border-color: $yellow;
-      }
-    }
-
-    .primary__label {
-      background: $black;
-    }
-
-    .secondary__label {
-      background: $red;
-    }
-
-    .color__item {
-      display: none;
-    }
-  }
 }
