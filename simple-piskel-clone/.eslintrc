@@ -7,5 +7,9 @@
     "node": true,
     "browser": true,
     "es6": true
+  },
+  "rules": {
+    "object-curly-newline": "off",
+    "no-return-assign": "off"
   }
 }
