@@ -1,6 +1,13 @@
 import elements from '../../elements';
+import settings from '../../../settings';
 
 const { canvas } = elements;
+const {
+  primaryColor,
+  secondaryColor,
+  realCanvasResolution,
+  canvasSelectedResolution,
+} = settings;
 
 let isDrawing = false;
 let lastX = 0;
@@ -10,10 +17,12 @@ const ctx = canvas.getContext('2d');
 
 function draw(e) {
   if (!isDrawing) return;
-  ctx.fillStyle = 'blue';
-  const x = Math.floor(e.offsetX / 16);
-  const y = Math.floor(e.offsetY / 16);
-  console.log(x, y, 1, 1);
+
+  const pixelSize = realCanvasResolution / canvasSelectedResolution;
+  const x = Math.floor(e.offsetX / pixelSize);
+  const y = Math.floor(e.offsetY / pixelSize);
+
+  ctx.fillStyle = primaryColor;
   ctx.fillRect(x, y, 1, 1);
 }
 
