@@ -11,6 +11,8 @@
   "rules": {
     "object-curly-newline": "off",
     "no-return-assign": "off",
-    "operator-linebreak": "off"
+    "operator-linebreak": "off",
+    "no-param-reassign": "off",
+    "no-constant-condition": "off"
   }
 }

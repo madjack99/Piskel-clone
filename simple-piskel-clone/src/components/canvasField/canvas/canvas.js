@@ -1,5 +1,6 @@
 import elements from '../../elements';
 import settings from '../../../settings';
+import bresenhamAlgorithm from './bresenhamAlgorithm';
 
 const { canvas } = elements;
 
@@ -19,6 +20,15 @@ function draw(e) {
 
   ctx.fillStyle = settings.primaryColor;
   ctx.fillRect(x, y, 1, 1);
+
+  bresenhamAlgorithm(
+    Math.floor(lastX / pixelSize),
+    Math.floor(lastY / pixelSize),
+    x,
+    y
+  );
+
+  [lastX, lastY] = [e.offsetX, e.offsetY];
 }
 
 export default function addDrawingHandler() {
