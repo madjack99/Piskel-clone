@@ -1,4 +1,4 @@
-import elements from '../elements';
+import elements from '../../elements';
 
 const { canvas } = elements;
 
