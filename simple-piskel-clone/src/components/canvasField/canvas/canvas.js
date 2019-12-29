@@ -30,6 +30,10 @@ function draw(e) {
     );
   }
 
+  if (settings.drawingTool === 'eraser') {
+    ctx.clearRect(x, y, settings.brushSize, settings.brushSize);
+  }
+
   [lastX, lastY] = [e.offsetX, e.offsetY];
 }
 
