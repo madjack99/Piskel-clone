@@ -9,6 +9,8 @@ const input32 = document.querySelector('.input-32');
 const input64 = document.querySelector('.input-64');
 const input128 = document.querySelector('.input-128');
 
+const brushSizeArr = [...document.querySelector('.size').children];
+
 const elements = {
   canvas,
   primaryColorLabel,
@@ -18,6 +20,7 @@ const elements = {
   input32,
   input64,
   input128,
+  brushSizeArr,
 };
 
 export default elements;

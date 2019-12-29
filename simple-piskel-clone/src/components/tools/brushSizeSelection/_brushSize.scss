@@ -1,0 +1,36 @@
+.size {
+  display: flex;
+
+  .size__item {
+    width: 25px;
+    height: 25px;
+    margin: 5px;
+    background-color: $black;
+    background-repeat: no-repeat;
+    border: 2px solid $grey;
+    background-image: url('../assets/images/size-square.png');
+    background-position: center;
+
+    &:hover {
+      border: 2px solid $yellow;
+      cursor: pointer;
+    }
+  }
+
+  .size__active {
+    border-color: $yellow;
+  }
+
+  .size__one {
+    background-size: 7px 7px;
+  }
+  .size__two {
+    background-size: 10px 10px;
+  }
+  .size__three {
+    background-size: 13px 13px;
+  }
+  .size__four {
+    background-size: 17px 17px;
+  }
+}
