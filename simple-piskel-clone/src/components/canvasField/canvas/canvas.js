@@ -18,15 +18,17 @@ function draw(e) {
   const x = Math.floor(e.offsetX / pixelSize);
   const y = Math.floor(e.offsetY / pixelSize);
 
-  ctx.fillStyle = settings.primaryColor;
-  ctx.fillRect(x, y, settings.brushSize, settings.brushSize);
+  if (settings.drawingTool === 'pencil') {
+    ctx.fillStyle = settings.primaryColor;
+    ctx.fillRect(x, y, settings.brushSize, settings.brushSize);
 
-  bresenhamAlgorithm(
-    Math.floor(lastX / pixelSize),
-    Math.floor(lastY / pixelSize),
-    x,
-    y
-  );
+    bresenhamAlgorithm(
+      Math.floor(lastX / pixelSize),
+      Math.floor(lastY / pixelSize),
+      x,
+      y
+    );
+  }
 
   [lastX, lastY] = [e.offsetX, e.offsetY];
 }

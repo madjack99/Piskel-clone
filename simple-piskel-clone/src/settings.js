@@ -4,6 +4,7 @@ const settings = {
   realCanvasResolution: 512,
   canvasSelectedResolution: 32,
   brushSize: 1,
+  drawingTool: 'pencil',
 };
 
 export default settings;
