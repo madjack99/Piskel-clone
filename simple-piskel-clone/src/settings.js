@@ -3,6 +3,7 @@ const settings = {
   secondaryColor: '#ff000',
   realCanvasResolution: 512,
   canvasSelectedResolution: 32,
+  brushSize: 1,
 };
 
 export default settings;

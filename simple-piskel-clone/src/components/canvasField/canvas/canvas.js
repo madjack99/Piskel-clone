@@ -19,7 +19,7 @@ function draw(e) {
   const y = Math.floor(e.offsetY / pixelSize);
 
   ctx.fillStyle = settings.primaryColor;
-  ctx.fillRect(x, y, 1, 1);
+  ctx.fillRect(x, y, settings.brushSize, settings.brushSize);
 
   bresenhamAlgorithm(
     Math.floor(lastX / pixelSize),
