@@ -13,6 +13,7 @@
     "no-return-assign": "off",
     "operator-linebreak": "off",
     "no-param-reassign": "off",
-    "no-constant-condition": "off"
+    "no-constant-condition": "off",
+    "comma-dangle": ["error", { "functions": "never" }]
   }
 }

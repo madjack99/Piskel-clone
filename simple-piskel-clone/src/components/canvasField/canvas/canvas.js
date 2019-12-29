@@ -33,7 +33,10 @@ function draw(e) {
 
 export default function addDrawingHandler() {
   canvas.addEventListener('mousemove', draw);
-  canvas.addEventListener('mousedown', () => (isDrawing = true));
+  canvas.addEventListener('mousedown', (e) => {
+    isDrawing = true;
+    [lastX, lastY] = [e.offsetX, e.offsetY];
+  });
   canvas.addEventListener('mouseup', () => (isDrawing = false));
   canvas.addEventListener('mouseout', () => (isDrawing = false));
 }
