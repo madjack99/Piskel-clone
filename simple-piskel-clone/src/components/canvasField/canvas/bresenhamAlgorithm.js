@@ -1,4 +1,5 @@
 import elements from '../../elements';
+import settings from '../../../settings';
 
 const { canvas } = elements;
 
@@ -12,7 +13,7 @@ export default function bresenhamAlgorithm(x0, y0, x1, y1) {
   let err = dx - dy;
 
   while (true) {
-    ctx.fillRect(x0, y0, 1, 1);
+    ctx.fillRect(x0, y0, settings.brushSize, settings.brushSize);
     if (x0 === x1 && y0 === y1) break;
     const e2 = 2 * err;
     if (e2 > -dy) {
