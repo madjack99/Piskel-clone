@@ -19,20 +19,33 @@ export default function drawOnSideFrame(activeFrame) {
   }
 }
 
-addFrameBtn.addEventListener('click', handleAddFrame);
+function updateActiveFrame() {
+  const allFramesArr = Array.from(document.querySelectorAll('.frame'));
+  allFramesArr.forEach((frame) => frame.classList.remove('frame_active'));
+}
+
+function clearMainCanvas() {
+  const { canvas } = elements;
+
+  const ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, 128, 128);
+}
 
 function handleAddFrame() {
-  const allFramesArr = Array.from(document.querySelectorAll('.frame'));
   const newCanvas = document.createElement('canvas');
 
-  allFramesArr.forEach((frame) => frame.classList.remove('frame_active'));
+  updateActiveFrame();
+  clearMainCanvas();
 
   settings.framesCount += 1;
+  settings.activeFrame = settings.framesCount;
 
   newCanvas.className = `frame-${settings.framesCount} frame frame_active`;
   newCanvas.width = 128;
   newCanvas.height = 128;
 
   framesDiv.appendChild(newCanvas);
-  console.log(newCanvas);
+  console.log(settings.activeFrame);
 }
+
+addFrameBtn.addEventListener('click', handleAddFrame);
