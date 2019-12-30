@@ -3,6 +3,9 @@ import addColorSelectionHandlers from './components/tools/colorSelection/colors'
 import addCanvasSizeHandler from './components/canvasField/sizeSelection/sizeSelection';
 import addBrushSizeSelectionHandler from './components/tools/brushSizeSelection/brushSize';
 import addToolSelectionHandler from './components/tools/toolSelection/toolSelection';
+import drawOnSideFrame from './components/frames/frames';
+
+import { drawSavedImage } from './components/canvasField/canvas/canvasHelpers';
 
 import './styles/main.scss';
 
@@ -12,3 +15,8 @@ addBrushSizeSelectionHandler();
 addToolSelectionHandler();
 
 addDrawingHandler();
+
+window.addEventListener('load', () => {
+  drawOnSideFrame();
+  drawSavedImage();
+});

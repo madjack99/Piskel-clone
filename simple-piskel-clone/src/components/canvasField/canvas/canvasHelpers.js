@@ -1,5 +1,6 @@
 import settings from '../../../settings';
 import bresenhamAlgorithm from './bresenhamAlgorithm';
+import elements from '../../elements';
 
 export function rgbToHex(r, g, b) {
   return `#${((r << 16) | (g << 8) | b).toString(16)}`;
@@ -44,5 +45,27 @@ export function makeStroke(coordForStroke) {
     const endStroke = coordForStroke[coordForStroke.length - 1];
 
     bresenhamAlgorithm(...startStroke, ...endStroke);
+  }
+}
+
+export function drawSavedImage() {
+  const { canvasSelectedResolution } = settings;
+  const { canvas } = elements;
+  const savedCanvas = localStorage.getItem('myCanvas');
+
+  if (savedCanvas) {
+    const img = new Image();
+    img.src = savedCanvas;
+    img.onload = () => {
+      canvas
+        .getContext('2d')
+        .drawImage(
+          img,
+          0,
+          0,
+          canvasSelectedResolution,
+          canvasSelectedResolution
+        );
+    };
   }
 }
