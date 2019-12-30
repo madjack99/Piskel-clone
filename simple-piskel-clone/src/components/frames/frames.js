@@ -1,16 +1,17 @@
-import elements from '../elements';
+import settings from '../../settings';
 
-export default function drawOnSideFrame() {
-  const { frame1 } = elements;
-  const savedCanvas = localStorage.getItem('myCanvas');
+export default function drawOnSideFrame(activeFrame) {
+  const activeFrameNode = document.querySelector(`.frame-${activeFrame}`);
+  const { framesImagesArr } = settings;
+  const imgUrl = framesImagesArr[activeFrame];
 
-  const ctx1 = frame1.getContext('2d');
+  const ctx = activeFrameNode.getContext('2d');
 
-  if (savedCanvas) {
+  if (imgUrl) {
     const img = new Image();
-    img.src = savedCanvas;
+    img.src = imgUrl;
     img.onload = () => {
-      ctx1.drawImage(img, 0, 0, 128, 128);
+      ctx.drawImage(img, 0, 0, 128, 128);
     };
   }
 }

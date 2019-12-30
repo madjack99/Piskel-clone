@@ -4,6 +4,7 @@ import addCanvasSizeHandler from './components/canvasField/sizeSelection/sizeSel
 import addBrushSizeSelectionHandler from './components/tools/brushSizeSelection/brushSize';
 import addToolSelectionHandler from './components/tools/toolSelection/toolSelection';
 import drawOnSideFrame from './components/frames/frames';
+import settings from './settings';
 
 import { drawSavedImage } from './components/canvasField/canvas/canvasHelpers';
 
@@ -17,6 +18,8 @@ addToolSelectionHandler();
 addDrawingHandler();
 
 window.addEventListener('load', () => {
-  drawOnSideFrame();
+  const { activeFrame } = settings;
+
+  drawOnSideFrame(activeFrame);
   drawSavedImage();
 });

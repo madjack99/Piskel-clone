@@ -24,6 +24,8 @@ function draw(e) {
     primaryColor,
     brushSize,
     drawingTool,
+    activeFrame,
+    framesImagesArr,
   } = settings;
 
   const pixelSize = realCanvasResolution / canvasSelectedResolution;
@@ -61,8 +63,10 @@ function draw(e) {
 
   [lastX, lastY] = [e.offsetX, e.offsetY];
 
-  localStorage.setItem('myCanvas', canvas.toDataURL());
-  drawOnSideFrame();
+  const currentImageOnCanvas = canvas.toDataURL();
+  framesImagesArr[activeFrame] = currentImageOnCanvas;
+
+  drawOnSideFrame(activeFrame);
   preview();
 }
 

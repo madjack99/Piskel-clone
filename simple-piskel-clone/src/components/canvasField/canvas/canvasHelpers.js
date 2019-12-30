@@ -48,14 +48,15 @@ export function makeStroke(coordForStroke) {
   }
 }
 
-export function drawSavedImage() {
-  const { canvasSelectedResolution } = settings;
+export function drawSavedImage(activeFrame) {
+  const { canvasSelectedResolution, framesImagesArr } = settings;
   const { canvas } = elements;
-  const savedCanvas = localStorage.getItem('myCanvas');
 
-  if (savedCanvas) {
+  const imgUrl = framesImagesArr[activeFrame];
+
+  if (imgUrl) {
     const img = new Image();
-    img.src = savedCanvas;
+    img.src = imgUrl;
     img.onload = () => {
       canvas
         .getContext('2d')

@@ -5,6 +5,9 @@ const settings = {
   canvasSelectedResolution: 32,
   brushSize: 1,
   drawingTool: 'pencil',
+  framesCount: 1,
+  activeFrame: 0,
+  framesImagesArr: [],
 };
 
 export default settings;
