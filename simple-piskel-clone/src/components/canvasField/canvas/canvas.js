@@ -2,6 +2,7 @@ import elements from '../../elements';
 import settings from '../../../settings';
 import bresenhamAlgorithm from './bresenhamAlgorithm';
 import drawOnSideFrame from '../../frames/frames';
+import preview from '../../preview/preview';
 
 import { floodFill, makeStroke } from './canvasHelpers';
 
@@ -62,6 +63,7 @@ function draw(e) {
 
   localStorage.setItem('myCanvas', canvas.toDataURL());
   drawOnSideFrame();
+  preview();
 }
 
 export default function addDrawingHandler() {

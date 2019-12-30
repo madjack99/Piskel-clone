@@ -15,6 +15,8 @@ const drawingToolsArr = [...document.querySelector('.draw').children];
 
 const frame1 = document.querySelector('.frame-1');
 
+const previewAnimation = document.querySelector('.preview__animation');
+
 const elements = {
   canvas,
   primaryColorLabel,
@@ -27,6 +29,7 @@ const elements = {
   brushSizeArr,
   drawingToolsArr,
   frame1,
+  previewAnimation,
 };
 
 export default elements;
