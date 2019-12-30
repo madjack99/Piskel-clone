@@ -8,6 +8,7 @@ const settings = {
   framesCount: 0,
   activeFrame: 0,
   framesImagesArr: [],
+  previewInterval: null,
 };
 
 export default settings;

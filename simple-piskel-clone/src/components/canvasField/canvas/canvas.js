@@ -67,7 +67,6 @@ function draw(e) {
   framesImagesArr[activeFrame] = currentImageOnCanvas;
 
   drawOnSideFrame(activeFrame);
-  preview();
 }
 
 export default function addDrawingHandler() {
@@ -83,6 +82,7 @@ export default function addDrawingHandler() {
     isDrawing = false;
     makeStroke(coordForStroke);
     coordForStroke = [];
+    preview();
   });
 
   canvas.addEventListener('mouseout', () => (isDrawing = false));

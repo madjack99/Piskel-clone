@@ -1,14 +1,19 @@
 import elements from '../elements';
 import settings from '../../settings';
 
-export default function preview(fps = 1) {
+export default function preview(fps = 4) {
   const { previewAnimation } = elements;
-  const { framesImagesArr } = settings;
+  const { framesImagesArr, previewInterval } = settings;
+
   const imagesTotal = framesImagesArr.length;
   let imagesCounter = 0;
 
+  if (previewInterval) {
+    clearInterval(settings.previewInterval);
+  }
+
   if (imagesTotal) {
-    setInterval(() => {
+    const currentInterval = setInterval(() => {
       console.log('test');
       const currentImage = framesImagesArr[imagesCounter];
       previewAnimation.style.backgroundImage = `url(${currentImage})`;
@@ -18,5 +23,7 @@ export default function preview(fps = 1) {
         imagesCounter += 1;
       }
     }, 1000 / fps);
+
+    settings.previewInterval = currentInterval;
   }
 }
