@@ -17,6 +17,8 @@ const frame1 = document.querySelector('.frame-1');
 
 const previewAnimation = document.querySelector('.preview__animation');
 
+const addFrameBtn = document.querySelector('.add-frame');
+
 const elements = {
   canvas,
   primaryColorLabel,
@@ -30,6 +32,7 @@ const elements = {
   drawingToolsArr,
   frame1,
   previewAnimation,
+  addFrameBtn,
 };
 
 export default elements;

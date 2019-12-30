@@ -5,7 +5,7 @@ const settings = {
   canvasSelectedResolution: 32,
   brushSize: 1,
   drawingTool: 'pencil',
-  framesCount: 1,
+  framesCount: 0,
   activeFrame: 0,
   framesImagesArr: [],
 };

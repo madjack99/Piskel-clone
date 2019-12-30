@@ -1,4 +1,7 @@
 import settings from '../../settings';
+import elements from '../elements';
+
+const { addFrameBtn } = elements;
 
 export default function drawOnSideFrame(activeFrame) {
   const activeFrameNode = document.querySelector(`.frame-${activeFrame}`);
@@ -15,3 +18,7 @@ export default function drawOnSideFrame(activeFrame) {
     };
   }
 }
+
+addFrameBtn.addEventListener('click', handleAddFrame);
+
+function handleAddFrame() {}
