@@ -13,6 +13,8 @@ const brushSizeArr = [...document.querySelector('.size').children];
 
 const drawingToolsArr = [...document.querySelector('.draw').children];
 
+const frame1 = document.querySelector('.frame-1');
+
 const elements = {
   canvas,
   primaryColorLabel,
@@ -24,6 +26,7 @@ const elements = {
   input128,
   brushSizeArr,
   drawingToolsArr,
+  frame1,
 };
 
 export default elements;

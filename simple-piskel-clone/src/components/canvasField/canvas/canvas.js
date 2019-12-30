@@ -1,6 +1,8 @@
 import elements from '../../elements';
 import settings from '../../../settings';
 import bresenhamAlgorithm from './bresenhamAlgorithm';
+import drawOnSideFrame from '../../frames/frames';
+
 import { floodFill, makeStroke } from './canvasHelpers';
 
 const { canvas } = elements;
@@ -57,6 +59,9 @@ function draw(e) {
   }
 
   [lastX, lastY] = [e.offsetX, e.offsetY];
+
+  localStorage.setItem('myCanvas', canvas.toDataURL());
+  drawOnSideFrame();
 }
 
 export default function addDrawingHandler() {
