@@ -1,4 +1,5 @@
 import settings from '../../../settings';
+import bresenhamAlgorithm from './bresenhamAlgorithm';
 
 export function rgbToHex(r, g, b) {
   return `#${((r << 16) | (g << 8) | b).toString(16)}`;
@@ -35,4 +36,13 @@ export function floodFill(x, y, target, replacement, ctx) {
   floodFill(x, y - 1, target, replacement, ctx);
   floodFill(x + 1, y, target, replacement, ctx);
   floodFill(x - 1, y, target, replacement, ctx);
+}
+
+export function makeStroke(coordForStroke) {
+  if (settings.drawingTool === 'stroke') {
+    const startStroke = coordForStroke[0];
+    const endStroke = coordForStroke[coordForStroke.length - 1];
+
+    bresenhamAlgorithm(...startStroke, ...endStroke);
+  }
 }

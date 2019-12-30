@@ -1,7 +1,7 @@
 import elements from '../../elements';
 import settings from '../../../settings';
 import bresenhamAlgorithm from './bresenhamAlgorithm';
-import { floodFill } from './canvasHelpers';
+import { floodFill, makeStroke } from './canvasHelpers';
 
 const { canvas } = elements;
 
@@ -10,19 +10,28 @@ let lastX = 0;
 let lastY = 0;
 
 const ctx = canvas.getContext('2d');
+let coordForStroke = [];
 
 function draw(e) {
   if (!isDrawing) return;
 
-  const pixelSize =
-    settings.realCanvasResolution / settings.canvasSelectedResolution;
+  const {
+    realCanvasResolution,
+    canvasSelectedResolution,
+    primaryColor,
+    brushSize,
+    drawingTool,
+  } = settings;
+
+  const pixelSize = realCanvasResolution / canvasSelectedResolution;
 
   const x = Math.floor(e.offsetX / pixelSize);
   const y = Math.floor(e.offsetY / pixelSize);
 
-  if (settings.drawingTool === 'pencil') {
-    ctx.fillStyle = settings.primaryColor;
-    ctx.fillRect(x, y, settings.brushSize, settings.brushSize);
+  ctx.fillStyle = primaryColor;
+
+  if (drawingTool === 'pencil') {
+    ctx.fillRect(x, y, brushSize, brushSize);
 
     bresenhamAlgorithm(
       Math.floor(lastX / pixelSize),
@@ -32,16 +41,19 @@ function draw(e) {
     );
   }
 
-  if (settings.drawingTool === 'eraser') {
-    ctx.clearRect(x, y, settings.brushSize, settings.brushSize);
+  if (drawingTool === 'eraser') {
+    ctx.clearRect(x, y, brushSize, brushSize);
   }
 
-  if (settings.drawingTool === 'bucket') {
+  if (drawingTool === 'bucket') {
     const targetColor = ctx.getImageData(x, y, 1, 1).data;
-    const replacementColor = settings.primaryColor;
-    // const targetColorHex = rgbToHex(...targetColor.slice(0, 3));
+    const replacementColor = primaryColor;
 
     floodFill(x, y, targetColor, replacementColor, ctx);
+  }
+
+  if (drawingTool === 'stroke') {
+    coordForStroke.push([x, y]);
   }
 
   [lastX, lastY] = [e.offsetX, e.offsetY];
@@ -49,11 +61,18 @@ function draw(e) {
 
 export default function addDrawingHandler() {
   canvas.addEventListener('mousemove', draw);
+
   canvas.addEventListener('mousedown', (e) => {
     isDrawing = true;
     [lastX, lastY] = [e.offsetX, e.offsetY];
     draw(e);
   });
-  canvas.addEventListener('mouseup', () => (isDrawing = false));
+
+  canvas.addEventListener('mouseup', () => {
+    isDrawing = false;
+    makeStroke(coordForStroke);
+    coordForStroke = [];
+  });
+
   canvas.addEventListener('mouseout', () => (isDrawing = false));
 }
