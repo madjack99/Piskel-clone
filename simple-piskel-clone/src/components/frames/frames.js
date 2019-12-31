@@ -1,6 +1,13 @@
 import settings from '../../settings';
 import elements from '../elements';
 
+import {
+  removeActiveFrameClass,
+  clearMainCanvas,
+  addDeleteBtn,
+  addActiveFrameClass,
+} from './framesHelper';
+
 const { addFrameBtn, framesDiv, frame0 } = elements;
 
 export default function drawOnSideFrame(activeFrame) {
@@ -49,28 +56,6 @@ function handleFrameSelection(e) {
   }
 }
 
-function addActiveFrameClass(id) {
-  const allFramesArr = Array.from(document.querySelectorAll('.frame'));
-  allFramesArr.forEach((frame) => {
-    const frameId = frame.classList[0].split('-')[1];
-    if (frameId === id) {
-      frame.classList.add('frame_active');
-    }
-  });
-}
-
-function removeActiveFrameClass() {
-  const allFramesArr = Array.from(document.querySelectorAll('.frame'));
-  allFramesArr.forEach((frame) => frame.classList.remove('frame_active'));
-}
-
-function clearMainCanvas() {
-  const { canvas } = elements;
-
-  const ctx = canvas.getContext('2d');
-  ctx.clearRect(0, 0, 128, 128);
-}
-
 function handleAddFrame() {
   const newCanvas = document.createElement('canvas');
   const frameWrapper = document.createElement('div');
@@ -92,15 +77,6 @@ function handleAddFrame() {
   frameWrapper.appendChild(newCanvas);
 
   framesDiv.appendChild(frameWrapper);
-}
-
-function addDeleteBtn(node) {
-  const deleteBtn = document.createElement('button');
-
-  deleteBtn.className = 'delete-btn';
-  deleteBtn.innerHTML = 'X';
-
-  node.appendChild(deleteBtn);
 }
 
 addFrameBtn.addEventListener('click', handleAddFrame);
