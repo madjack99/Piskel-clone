@@ -4,7 +4,11 @@ import bresenhamAlgorithm from './bresenhamAlgorithm';
 import drawOnSideFrame from '../../frames/frames';
 import preview from '../../preview/preview';
 
-import { floodFill, makeStroke } from './canvasHelpers';
+import {
+  floodFill,
+  makeStroke,
+  saveImageFromMainCanvas,
+} from './canvasHelpers';
 
 const { canvas } = elements;
 
@@ -25,7 +29,6 @@ function draw(e) {
     brushSize,
     drawingTool,
     activeFrame,
-    framesImagesArr,
   } = settings;
 
   const pixelSize = realCanvasResolution / canvasSelectedResolution;
@@ -63,8 +66,7 @@ function draw(e) {
 
   [lastX, lastY] = [e.offsetX, e.offsetY];
 
-  const currentImageOnCanvas = canvas.toDataURL();
-  framesImagesArr[activeFrame] = currentImageOnCanvas;
+  saveImageFromMainCanvas(activeFrame);
 
   drawOnSideFrame(activeFrame);
 }

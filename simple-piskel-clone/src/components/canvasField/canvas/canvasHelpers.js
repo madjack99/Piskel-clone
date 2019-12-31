@@ -1,6 +1,7 @@
 import settings from '../../../settings';
 import bresenhamAlgorithm from './bresenhamAlgorithm';
 import elements from '../../elements';
+import drawOnSideFrame from '../../frames/frames';
 
 export function rgbToHex(r, g, b) {
   return `#${((r << 16) | (g << 8) | b).toString(16)}`;
@@ -40,11 +41,16 @@ export function floodFill(x, y, target, replacement, ctx) {
 }
 
 export function makeStroke(coordForStroke) {
+  const { activeFrame } = settings;
+
   if (settings.drawingTool === 'stroke') {
     const startStroke = coordForStroke[0];
     const endStroke = coordForStroke[coordForStroke.length - 1];
 
     bresenhamAlgorithm(...startStroke, ...endStroke);
+
+    saveImageFromMainCanvas(activeFrame);
+    drawOnSideFrame(activeFrame);
   }
 }
 
@@ -69,4 +75,13 @@ export function drawSavedImage(activeFrame) {
         );
     };
   }
+}
+
+export function saveImageFromMainCanvas(activeFrame) {
+  const { canvas } = elements;
+  const { framesImagesArr } = settings;
+
+  const currentImageOnCanvas = canvas.toDataURL();
+
+  framesImagesArr[activeFrame] = currentImageOnCanvas;
 }
