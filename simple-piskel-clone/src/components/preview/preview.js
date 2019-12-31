@@ -5,8 +5,12 @@ export default function preview(fps = 4) {
   const { previewAnimation } = elements;
   const { framesImagesArr, previewInterval } = settings;
 
-  const imagesTotal = framesImagesArr.length;
   let imagesCounter = 0;
+
+  const framesImagesWithContent = framesImagesArr.filter(
+    (frameContent) => frameContent !== undefined
+  );
+  const imagesTotal = framesImagesWithContent.length;
 
   if (previewInterval) {
     clearInterval(settings.previewInterval);
@@ -14,7 +18,7 @@ export default function preview(fps = 4) {
 
   if (imagesTotal) {
     const currentInterval = setInterval(() => {
-      const currentImage = framesImagesArr[imagesCounter];
+      const currentImage = framesImagesWithContent[imagesCounter];
       previewAnimation.style.backgroundImage = `url(${currentImage})`;
       if (imagesCounter === imagesTotal - 1) {
         imagesCounter = 0;
