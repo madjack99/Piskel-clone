@@ -50,7 +50,8 @@ function draw(e) {
   }
 
   if (drawingTool === 'eraser') {
-    ctx.clearRect(x, y, brushSize, brushSize);
+    ctx.fillStyle = 'white';
+    ctx.fillRect(x, y, brushSize, brushSize);
   }
 
   if (drawingTool === 'bucket') {
