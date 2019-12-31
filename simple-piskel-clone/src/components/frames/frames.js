@@ -73,6 +73,7 @@ function clearMainCanvas() {
 
 function handleAddFrame() {
   const newCanvas = document.createElement('canvas');
+  const frameWrapper = document.createElement('div');
 
   removeActiveFrameClass();
   clearMainCanvas();
@@ -80,12 +81,26 @@ function handleAddFrame() {
   settings.framesCount += 1;
   settings.activeFrame = settings.framesCount;
 
+  frameWrapper.className = 'frame-wrapper';
+
   newCanvas.className = `frame-${settings.framesCount} frame frame_active`;
   newCanvas.width = 128;
   newCanvas.height = 128;
   newCanvas.addEventListener('click', handleFrameSelection);
 
-  framesDiv.appendChild(newCanvas);
+  addDeleteBtn(frameWrapper);
+  frameWrapper.appendChild(newCanvas);
+
+  framesDiv.appendChild(frameWrapper);
+}
+
+function addDeleteBtn(node) {
+  const deleteBtn = document.createElement('button');
+
+  deleteBtn.className = 'delete-btn';
+  deleteBtn.innerHTML = 'X';
+
+  node.appendChild(deleteBtn);
 }
 
 addFrameBtn.addEventListener('click', handleAddFrame);
