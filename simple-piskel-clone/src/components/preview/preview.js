@@ -14,7 +14,6 @@ export default function preview(fps = 4) {
 
   if (imagesTotal) {
     const currentInterval = setInterval(() => {
-      console.log('test');
       const currentImage = framesImagesArr[imagesCounter];
       previewAnimation.style.backgroundImage = `url(${currentImage})`;
       if (imagesCounter === imagesTotal - 1) {

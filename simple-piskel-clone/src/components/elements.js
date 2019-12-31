@@ -20,6 +20,7 @@ const previewAnimation = document.querySelector('.preview__animation');
 const addFrameBtn = document.querySelector('.add-frame');
 
 const framesDiv = document.querySelector('.frames');
+const frame0 = document.querySelector('.frame-0');
 
 const elements = {
   canvas,
@@ -36,6 +37,7 @@ const elements = {
   previewAnimation,
   addFrameBtn,
   framesDiv,
+  frame0,
 };
 
 export default elements;

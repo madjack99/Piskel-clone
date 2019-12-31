@@ -16,6 +16,7 @@
     "no-constant-condition": "off",
     "comma-dangle": ["error", "only-multiline"],
     "linebreak-style": "off",
-    "no-bitwise": "off"
+    "no-bitwise": "off",
+    "no-use-before-define": "off"
   }
 }
