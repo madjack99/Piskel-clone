@@ -34,17 +34,19 @@ function handleFrameSelection(e) {
 
   settings.activeFrame = selectedFrameId;
 
-  const newImage = new Image();
-  newImage.src = selectedFrameImageUrl;
-  newImage.onload = () => {
-    ctx.drawImage(
-      newImage,
-      0,
-      0,
-      canvasSelectedResolution,
-      canvasSelectedResolution
-    );
-  };
+  if (selectedFrameImageUrl) {
+    const newImage = new Image();
+    newImage.src = selectedFrameImageUrl;
+    newImage.onload = () => {
+      ctx.drawImage(
+        newImage,
+        0,
+        0,
+        canvasSelectedResolution,
+        canvasSelectedResolution
+      );
+    };
+  }
 }
 
 function addActiveFrameClass(id) {
