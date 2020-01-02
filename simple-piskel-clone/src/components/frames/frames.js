@@ -8,9 +8,17 @@ import {
   addDeleteBtn,
   addActiveFrameClass,
   addCopyBtn,
+  handleFrameCopy,
+  handleFrameDelete,
 } from './framesHelper';
 
-const { addFrameBtn, framesDiv, frame0 } = elements;
+const {
+  addFrameBtn,
+  framesDiv,
+  frame0,
+  frame0CopyBtn,
+  frame0DeleteBtn,
+} = elements;
 
 export default function drawOnSideFrame(activeFrame) {
   const activeFrameNode = document.querySelector(`.frame-${activeFrame}`);
@@ -28,7 +36,7 @@ export default function drawOnSideFrame(activeFrame) {
   }
 }
 
-function handleFrameSelection(e) {
+export function handleFrameSelection(e) {
   const { framesImagesArr, canvasSelectedResolution } = settings;
   const { classList } = e.target;
   const { canvas } = elements;
@@ -67,6 +75,7 @@ function handleAddFrame() {
 
   settings.framesCount += 1;
   settings.activeFrame = settings.framesCount;
+  console.log(settings.framesCount);
 
   frameWrapper.className = 'frame-wrapper';
 
@@ -86,3 +95,5 @@ function handleAddFrame() {
 
 addFrameBtn.addEventListener('click', handleAddFrame);
 frame0.addEventListener('click', handleFrameSelection);
+frame0CopyBtn.addEventListener('click', handleFrameCopy);
+frame0DeleteBtn.addEventListener('click', handleFrameDelete);

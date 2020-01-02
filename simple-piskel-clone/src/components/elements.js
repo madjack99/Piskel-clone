@@ -22,6 +22,9 @@ const addFrameBtn = document.querySelector('.add-frame');
 const framesDiv = document.querySelector('.frames');
 const frame0 = document.querySelector('.frame-0');
 
+const frame0CopyBtn = document.querySelector('.copy-btn');
+const frame0DeleteBtn = document.querySelector('.delete-btn');
+
 const elements = {
   canvas,
   primaryColorLabel,
@@ -38,6 +41,8 @@ const elements = {
   addFrameBtn,
   framesDiv,
   frame0,
+  frame0CopyBtn,
+  frame0DeleteBtn,
 };
 
 export default elements;
