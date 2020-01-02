@@ -1,9 +1,13 @@
-.preview__animation {
-  margin: 38px 0 0 10px;
-  border: 2px solid $black;
-  width: 128px;
-  height: 128px;
-  background: $white;
-  background-repeat: no-repeat;
-  background-size: cover;
+.preview {
+  padding-left: 10px;
+
+  .preview__animation {
+    margin: 38px 0 0 0;
+    border: 2px solid $black;
+    width: 128px;
+    height: 128px;
+    background: $white;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
