@@ -25,6 +25,9 @@ const frame0 = document.querySelector('.frame-0');
 const frame0CopyBtn = document.querySelector('.copy-btn');
 const frame0DeleteBtn = document.querySelector('.delete-btn');
 
+const displayFpsValue = document.querySelector('.fps-value');
+const fpsSliderInput = document.querySelector('.fps-slider');
+
 const elements = {
   canvas,
   primaryColorLabel,
@@ -43,6 +46,8 @@ const elements = {
   frame0,
   frame0CopyBtn,
   frame0DeleteBtn,
+  displayFpsValue,
+  fpsSliderInput,
 };
 
 export default elements;

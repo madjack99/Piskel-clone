@@ -1,6 +1,8 @@
 import elements from '../elements';
 import settings from '../../settings';
 
+const { fpsSliderInput, displayFpsValue } = elements;
+
 export default function preview(fps = 4) {
   const { previewAnimation } = elements;
   const { framesImagesArr, previewInterval } = settings;
@@ -30,3 +32,12 @@ export default function preview(fps = 4) {
     settings.previewInterval = currentInterval;
   }
 }
+
+function handleFpsChange(e) {
+  const newFpsValue = e.target.value;
+
+  displayFpsValue.innerHTML = newFpsValue;
+  preview(newFpsValue);
+}
+
+fpsSliderInput.addEventListener('change', handleFpsChange);
