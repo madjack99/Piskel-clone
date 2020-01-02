@@ -1,4 +1,6 @@
 import elements from '../elements';
+import settings from '../../settings';
+import preview from '../preview/preview';
 
 export function removeActiveFrameClass() {
   const allFramesArr = Array.from(document.querySelectorAll('.frame'));
@@ -12,15 +14,6 @@ export function clearMainCanvas() {
   ctx.clearRect(0, 0, 128, 128);
 }
 
-export function addDeleteBtn(node) {
-  const deleteBtn = document.createElement('button');
-
-  deleteBtn.className = 'delete-btn';
-  deleteBtn.innerHTML = 'X';
-
-  node.appendChild(deleteBtn);
-}
-
 export function addActiveFrameClass(id) {
   const allFramesArr = Array.from(document.querySelectorAll('.frame'));
   allFramesArr.forEach((frame) => {
@@ -29,4 +22,42 @@ export function addActiveFrameClass(id) {
       frame.classList.add('frame_active');
     }
   });
+}
+
+export function addDeleteBtn(node) {
+  const deleteBtn = document.createElement('button');
+
+  deleteBtn.className = 'delete-btn';
+  deleteBtn.innerHTML = 'X';
+
+  deleteBtn.addEventListener('click', handleFrameDelete);
+
+  node.appendChild(deleteBtn);
+}
+
+function handleFrameDelete(e) {
+  const { framesImagesArr } = settings;
+
+  const allFramesArr = Array.from(document.querySelectorAll('.frame'));
+  const frameToDelete = e.target.nextSibling.classList[0];
+  const frameId = Number.parseInt(frameToDelete.split('-')[1], 10);
+  console.log(allFramesArr);
+
+  allFramesArr.forEach((frame) => {
+    const frameClassList = Array.from(frame.classList);
+    if (frameClassList.includes(frameToDelete)) {
+      const frameWrapperToDelete = frame.parentNode;
+      frameWrapperToDelete.parentNode.removeChild(frameWrapperToDelete);
+    }
+  });
+
+  framesImagesArr.splice(frameId, 1);
+
+  Array.from(document.querySelectorAll('.frame')).forEach((frame, index) => {
+    frame.className = `frame-${index} frame`;
+  });
+
+  elements.frame0.click();
+
+  preview();
 }

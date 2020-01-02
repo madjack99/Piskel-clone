@@ -74,8 +74,8 @@ function handleAddFrame() {
   newCanvas.addEventListener('click', handleFrameSelection);
 
   addDeleteBtn(frameWrapper);
-  frameWrapper.appendChild(newCanvas);
 
+  frameWrapper.appendChild(newCanvas);
   framesDiv.appendChild(frameWrapper);
 }
 
