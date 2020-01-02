@@ -11,3 +11,4 @@
 | Dec 30     | Dec 31   | 8 h        | with possibility to continue drawing                                                          |
 | Dec 31     | Jan 02   | 5 h        | add delete frames functionality                                                               |
 | Dec 02     | Jan 02   | 4 h        | add copy frames functionality                                                                 |
+| Dec 02     | Jan 02   | 20m        | add animation fps change functionality                                                        |
