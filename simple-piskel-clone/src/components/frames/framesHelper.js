@@ -41,7 +41,6 @@ function handleFrameDelete(e) {
   const allFramesArr = Array.from(document.querySelectorAll('.frame'));
   const frameToDelete = e.target.nextSibling.classList[0];
   const frameId = Number.parseInt(frameToDelete.split('-')[1], 10);
-  console.log(allFramesArr);
 
   allFramesArr.forEach((frame) => {
     const frameClassList = Array.from(frame.classList);
@@ -52,6 +51,7 @@ function handleFrameDelete(e) {
   });
 
   framesImagesArr.splice(frameId, 1);
+  settings.framesCount -= 1;
 
   Array.from(document.querySelectorAll('.frame')).forEach((frame, index) => {
     frame.className = `frame-${index} frame`;
