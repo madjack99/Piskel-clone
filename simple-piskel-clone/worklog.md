@@ -12,3 +12,4 @@
 | Dec 31     | Jan 02   | 5 h        | add delete frames functionality                                                               |
 | Dec 02     | Jan 02   | 4 h        | add copy frames functionality                                                                 |
 | Dec 02     | Jan 02   | 20m        | add animation fps change functionality                                                        |
+| Dec 02     | Jan 02   | 40m        | add full screen animation functionality                                                       |

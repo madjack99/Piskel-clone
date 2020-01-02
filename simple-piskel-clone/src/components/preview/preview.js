@@ -1,10 +1,9 @@
 import elements from '../elements';
 import settings from '../../settings';
 
-const { fpsSliderInput, displayFpsValue } = elements;
+const { fpsSliderInput, displayFpsValue, previewAnimation } = elements;
 
 export default function preview(fps = 4) {
-  const { previewAnimation } = elements;
   const { framesImagesArr, previewInterval } = settings;
 
   let imagesCounter = 0;
@@ -40,4 +39,15 @@ function handleFpsChange(e) {
   preview(newFpsValue);
 }
 
+function handleFullScreen() {
+  if (!document.fullscreenElement) {
+    previewAnimation.requestFullscreen();
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    }
+  }
+}
+
 fpsSliderInput.addEventListener('change', handleFpsChange);
+previewAnimation.addEventListener('click', handleFullScreen);
