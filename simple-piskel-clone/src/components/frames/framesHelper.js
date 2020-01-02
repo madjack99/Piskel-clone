@@ -61,3 +61,18 @@ function handleFrameDelete(e) {
 
   preview();
 }
+
+export function addCopyBtn(node) {
+  const copyBtn = document.createElement('button');
+
+  copyBtn.className = 'copy-btn';
+  copyBtn.innerHTML = 'C';
+
+  copyBtn.addEventListener('click', handleFrameCopy);
+
+  node.appendChild(copyBtn);
+}
+
+function handleFrameCopy() {
+  console.log('copy');
+}

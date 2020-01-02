@@ -7,6 +7,7 @@ import {
   clearMainCanvas,
   addDeleteBtn,
   addActiveFrameClass,
+  addCopyBtn,
 } from './framesHelper';
 
 const { addFrameBtn, framesDiv, frame0 } = elements;
@@ -77,8 +78,9 @@ function handleAddFrame() {
   saveImageFromMainCanvas(settings.framesCount);
 
   addDeleteBtn(frameWrapper);
-
   frameWrapper.appendChild(newCanvas);
+  addCopyBtn(frameWrapper);
+
   framesDiv.appendChild(frameWrapper);
 }
 

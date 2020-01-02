@@ -19,6 +19,12 @@
       height: 20px;
       background: red;
     }
+    .copy-btn {
+      position: absolute;
+      left: 0px;
+      bottom: 0px;
+      background: $yellow;
+    }
     .frame_active {
       border-color: $yellow;
     }
