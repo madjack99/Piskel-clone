@@ -10,9 +10,10 @@ export function removeActiveFrameClass() {
 
 export function clearMainCanvas() {
   const { canvas } = elements;
-
   const ctx = canvas.getContext('2d');
-  ctx.clearRect(0, 0, 128, 128);
+
+  ctx.fillStyle = 'white';
+  ctx.fillRect(0, 0, 128, 128);
 }
 
 export function addActiveFrameClass(id) {

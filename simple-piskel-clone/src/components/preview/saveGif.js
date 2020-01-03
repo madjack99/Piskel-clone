@@ -5,11 +5,12 @@ import elements from '../elements';
 const { previewDiv } = elements;
 
 export default function handleGifSave() {
-  const { framesImagesArr } = settings;
-  console.log(previewDiv);
+  const { framesImagesArr, fps } = settings;
+  console.log(typeof fps);
   gifshot.createGIF(
     {
       images: [...framesImagesArr],
+      frameDuration: 10 / fps,
     },
     (obj) => {
       if (!obj.error) {

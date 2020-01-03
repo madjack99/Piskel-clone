@@ -1,6 +1,9 @@
 import settings from '../../settings';
 import elements from '../elements';
-import { saveImageFromMainCanvas } from '../canvasField/canvas/canvasHelpers';
+import {
+  saveImageFromMainCanvas,
+  fillCanvasWithWhite,
+} from '../canvasField/canvas/canvasHelpers';
 
 import {
   removeActiveFrameClass,
@@ -83,6 +86,7 @@ function handleAddFrame() {
   newCanvas.width = 128;
   newCanvas.height = 128;
   newCanvas.addEventListener('click', handleFrameSelection);
+  fillCanvasWithWhite(newCanvas);
 
   saveImageFromMainCanvas(settings.framesCount);
 

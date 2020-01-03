@@ -19,6 +19,8 @@ export default function preview(fps = 4) {
   );
   const imagesTotal = framesImagesWithContent.length;
 
+  settings.fps = fps;
+
   if (previewInterval) {
     clearInterval(settings.previewInterval);
   }

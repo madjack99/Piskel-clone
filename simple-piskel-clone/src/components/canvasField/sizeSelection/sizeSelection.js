@@ -1,6 +1,6 @@
 import elements from '../../elements';
 import settings from '../../../settings';
-import { drawSavedImage } from '../canvas/canvasHelpers';
+import { drawSavedImage, fillCanvasWithWhite } from '../canvas/canvasHelpers';
 
 const { input32, input64, input128, canvas } = elements;
 
@@ -10,6 +10,8 @@ const handleCanvasSizeChange = (e) => {
 
   canvas.width = newSizeValue;
   canvas.height = newSizeValue;
+
+  fillCanvasWithWhite(canvas);
 
   settings.canvasSelectedResolution = newSizeValue;
 

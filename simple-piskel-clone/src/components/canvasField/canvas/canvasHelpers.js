@@ -85,3 +85,9 @@ export function saveImageFromMainCanvas(activeFrame) {
 
   framesImagesArr[activeFrame] = currentImageOnCanvas;
 }
+
+export function fillCanvasWithWhite(canvas) {
+  const ctx = canvas.getContext('2d');
+  ctx.fillStyle = 'white';
+  ctx.fillRect(0, 0, 128, 128);
+}
