@@ -15,6 +15,7 @@ const drawingToolsArr = [...document.querySelector('.draw').children];
 
 const frame1 = document.querySelector('.frame-1');
 
+const previewDiv = document.querySelector('.preview');
 const previewAnimation = document.querySelector('.preview__animation');
 
 const addFrameBtn = document.querySelector('.add-frame');
@@ -27,6 +28,8 @@ const frame0DeleteBtn = document.querySelector('.delete-btn');
 
 const displayFpsValue = document.querySelector('.fps-value');
 const fpsSliderInput = document.querySelector('.fps-slider');
+
+const exportGif = document.querySelector('.export-gif');
 
 const elements = {
   canvas,
@@ -48,6 +51,8 @@ const elements = {
   frame0DeleteBtn,
   displayFpsValue,
   fpsSliderInput,
+  exportGif,
+  previewDiv,
 };
 
 export default elements;

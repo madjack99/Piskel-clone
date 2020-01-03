@@ -1,7 +1,13 @@
 import elements from '../elements';
 import settings from '../../settings';
+import handleGifSave from './saveGif';
 
-const { fpsSliderInput, displayFpsValue, previewAnimation } = elements;
+const {
+  fpsSliderInput,
+  displayFpsValue,
+  previewAnimation,
+  exportGif,
+} = elements;
 
 export default function preview(fps = 4) {
   const { framesImagesArr, previewInterval } = settings;
@@ -51,3 +57,4 @@ function handleFullScreen() {
 
 fpsSliderInput.addEventListener('change', handleFpsChange);
 previewAnimation.addEventListener('click', handleFullScreen);
+exportGif.addEventListener('click', handleGifSave);
