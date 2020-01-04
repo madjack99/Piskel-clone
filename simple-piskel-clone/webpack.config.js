@@ -1,4 +1,4 @@
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
@@ -47,10 +47,20 @@ module.exports = {
       },
     ],
   },
+  entry: {
+    index: './src/index.js',
+    landing: './src/landing.js',
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: './index.html',
+      chunks: ['index'],
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/landing.html',
+      filename: './landing.html',
+      chunks: ['landing'],
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
