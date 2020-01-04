@@ -6,7 +6,6 @@ const { previewDiv } = elements;
 
 export default function handleGifSave() {
   const { framesImagesArr, fps } = settings;
-  console.log(typeof fps);
   gifshot.createGIF(
     {
       images: [...framesImagesArr],
@@ -20,11 +19,29 @@ export default function handleGifSave() {
         // document.body.appendChild(animatedImage);
 
         const downloadLink = document.createElement('a');
+        downloadLink.className = 'gif-download';
         downloadLink.href = image;
         downloadLink.download = 'generated gif';
         downloadLink.innerText = 'Download GIF';
-        previewDiv.appendChild(downloadLink);
+
+        downloadLink.addEventListener('click', () => {
+          deleteLink(downloadLink);
+        });
+
+        customAppendChild(downloadLink);
       }
     }
   );
+}
+
+function customAppendChild(element) {
+  const existingLink = document.querySelector('.gif-download');
+  if (existingLink) {
+    previewDiv.removeChild(existingLink);
+  }
+  previewDiv.appendChild(element);
+}
+
+function deleteLink(element) {
+  element.parentNode.removeChild(element);
 }
