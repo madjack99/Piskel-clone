@@ -15,3 +15,4 @@
 | Dec 02     | Jan 02   | 40m        | add full screen animation functionality                                                       |
 | Dec 03     | Jan 03   | 4 h        | add button with js functionality to generate gif image and "a" tag to download it to PC       |
 | Dec 04     | Jan 04   | 4 h        | update webpack settings to add second html pagee - landing page                               |
+| Dec 05     | Jan 05   | 4 h        | add authentication with Google OAuth                                                          |

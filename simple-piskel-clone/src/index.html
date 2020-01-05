@@ -8,13 +8,15 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css"
     />
+    <meta name="google-signin-client_id" content="546331355202-9vb1g2dbi4499a0bnq4mflp9tfsmdfpe.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <title>simple-piskel-clone</title>
   </head>
   <body>
     <header class="header">
       <h1 class="header__title">PISKEL</h1>
       <a href="landing.html">Landing</a>
-      <button class="sign-in">Sign in</button>
+      <div class="g-signin2" data-onsuccess="onSignIn"></div>
     </header>
     <main class="main">
       <section class="tools">
@@ -74,5 +76,12 @@
         <button class="export-gif">Generate GIF</button><br>
       </section>
     </main>
+    <script>
+      function onSignIn(googleUser) {
+        const profile = googleUser.getBasicProfile();
+        const btn = document.querySelector('.g-signin2');
+        btn.innerText = `Hi, ${profile.getName()}`        
+      }
+    </script>
   </body>
 </html>
