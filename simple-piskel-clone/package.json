@@ -6,7 +6,8 @@
   "scripts": {
     "build": "webpack",
     "dev": "webpack-dev-server",
-    "test": "jest --watch"
+    "test": "jest --watch",
+    "coverage:full": "jest --coverage --coverage-reporters=lcov"
   },
   "jest": {
     "setupFiles": [
