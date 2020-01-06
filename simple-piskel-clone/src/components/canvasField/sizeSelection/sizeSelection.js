@@ -4,7 +4,7 @@ import { drawSavedImage, fillCanvasWithWhite } from '../canvas/canvasHelpers';
 
 const { input32, input64, input128, canvas } = elements;
 
-const handleCanvasSizeChange = (e) => {
+export const handleCanvasSizeChange = (e) => {
   const { activeFrame } = settings;
   const newSizeValue = e.target.value;
 

@@ -20,6 +20,7 @@
     "no-bitwise": "off",
     "no-use-before-define": "off",
     "import/no-cycle": "off",
-    "no-lonely-if": "off"
+    "no-lonely-if": "off",
+    "global-require": "off"
   }
 }
