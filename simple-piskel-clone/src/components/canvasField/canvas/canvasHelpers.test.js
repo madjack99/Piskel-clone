@@ -1,4 +1,5 @@
 import testDom from '../../../test/testDom';
+import settings from '../../../settings';
 
 describe('rgb to hex function', () => {
   document.body.innerHTML = testDom;
@@ -24,4 +25,15 @@ test('canvas should be painted with white after applying fillWithWhite func', ()
   const ctx = canvas.getContext('2d');
   // expect(ctx.__getEvents()[0].props.value).toBe('#fff');
   expect(ctx.__getEvents()).toMatchSnapshot();
+});
+
+test('should correctly update the framesImagesArr', () => {
+  document.body.innerHTML = testDom;
+
+  const { saveImageFromMainCanvas } = require('./canvasHelpers');
+  const { framesImagesArr } = settings;
+
+  saveImageFromMainCanvas(0);
+
+  expect(framesImagesArr.length).toBe(1);
 });

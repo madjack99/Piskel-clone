@@ -56,7 +56,6 @@ function draw(e) {
 
   if (drawingTool === 'bucket') {
     const targetColor = ctx.getImageData(x, y, 1, 1).data;
-    console.log(targetColor);
     const replacementColor = primaryColor;
 
     floodFill(x, y, targetColor, replacementColor, ctx);
