@@ -35,11 +35,31 @@ describe('should add frame_active class to correct frame', () => {
   });
 });
 
-test('should add button to the node', () => {
+test('should add delete button to the node', () => {
   document.body.innerHTML = '<div class="test"></div>';
 
   const { addDeleteBtn } = require('./framesHelper');
   const testDiv = document.querySelector('.test');
   addDeleteBtn(testDiv);
   expect(testDiv.children.length).toBe(1);
+});
+
+test('should add copy button to the node', () => {
+  document.body.innerHTML = '<div class="test"></div>';
+
+  const { addCopyBtn } = require('./framesHelper');
+  const testDiv = document.querySelector('.test');
+  addCopyBtn(testDiv);
+  expect(testDiv.children.length).toBe(1);
+});
+
+test('should correctly rename the name of the class', () => {
+  document.body.innerHTML = '<div class="frame-88 frame"></div>';
+
+  const { updateCanvasClassNameIds } = require('./framesHelper');
+  updateCanvasClassNameIds();
+  const updatedClassList = Array.from(
+    document.querySelector('.frame').classList
+  );
+  expect(updatedClassList).toContain('frame-0');
 });

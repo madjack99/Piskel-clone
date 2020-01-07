@@ -111,7 +111,7 @@ export function handleFrameCopy(e) {
   copiedCanvas.click();
 }
 
-function updateCanvasClassNameIds() {
+export function updateCanvasClassNameIds() {
   Array.from(document.querySelectorAll('.frame')).forEach((frame, index) => {
     frame.className = `frame-${index} frame`;
   });
