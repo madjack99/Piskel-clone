@@ -25,7 +25,7 @@ export default function handleGifSave() {
         downloadLink.innerText = 'Download GIF';
 
         downloadLink.addEventListener('click', () => {
-          deleteLink(downloadLink);
+          deleteNode(downloadLink);
         });
 
         customAppendChild(downloadLink);
@@ -34,14 +34,15 @@ export default function handleGifSave() {
   );
 }
 
-function customAppendChild(element) {
+export function customAppendChild(element) {
   const existingLink = document.querySelector('.gif-download');
+  // console.log([...existingLink.classList]);
   if (existingLink) {
     previewDiv.removeChild(existingLink);
   }
   previewDiv.appendChild(element);
 }
 
-function deleteLink(element) {
+export function deleteNode(element) {
   element.parentNode.removeChild(element);
 }
