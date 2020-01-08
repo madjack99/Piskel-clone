@@ -1,8 +1,6 @@
 import testDom from '../../test/testDom';
 import settings from '../../settings';
 
-// const { displayFpsValue } = elements;
-
 test('should update fps in settings', () => {
   document.body.innerHTML = testDom;
 

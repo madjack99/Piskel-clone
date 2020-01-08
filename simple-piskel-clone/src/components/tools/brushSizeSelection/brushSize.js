@@ -3,26 +3,26 @@ import settings from '../../../settings';
 
 const { brushSizeArr } = elements;
 
-const handleBrushSizeChange = (e) => {
+export const handleBrushSizeChange = (e) => {
   brushSizeArr.forEach((node) => {
     node.classList.remove('size_active');
   });
 
-  if (e.target.classList.contains('size__one')) {
+  if ([...e.target.classList].includes('size__one')) {
     settings.brushSize = 1;
-    e.target.classList.add('size_active');
+    e.target.className += ' size_active';
   }
-  if (e.target.classList.contains('size__two')) {
+  if ([...e.target.classList].includes('size__two')) {
     settings.brushSize = 2;
-    e.target.classList.add('size_active');
+    e.target.className += ' size_active';
   }
-  if (e.target.classList.contains('size__three')) {
+  if ([...e.target.classList].includes('size__three')) {
     settings.brushSize = 3;
-    e.target.classList.add('size_active');
+    e.target.className += ' size_active';
   }
-  if (e.target.classList.contains('size__four')) {
+  if ([...e.target.classList].includes('size__four')) {
     settings.brushSize = 4;
-    e.target.classList.add('size_active');
+    e.target.className += ' size_active';
   }
 };
 
