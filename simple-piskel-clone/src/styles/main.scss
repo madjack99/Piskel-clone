@@ -19,7 +19,6 @@ body {
 
 .main {
   display: grid;
-  grid-template-columns: 30% 70%;
   padding: 0 20px;
 }
 
@@ -30,7 +29,7 @@ body {
   background: $black;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1000px) {
   .main {
     display: flex;
   }
