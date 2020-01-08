@@ -1,6 +1,5 @@
 .preview {
   padding-left: 10px;
-  cursor: pointer;
 
   .preview__animation {
     margin: 38px 0 0 0;
@@ -10,5 +9,24 @@
     background: $white;
     background-repeat: no-repeat;
     background-size: cover;
+    cursor: pointer;
+  }
+
+  .fps-display {
+    padding: 10px 0;
+    color: $white;
+  }
+
+  .export-gif {
+    width: 128px;
+    margin: 10px 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .gif-download {
+    color: $white;
   }
 }

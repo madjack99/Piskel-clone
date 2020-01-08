@@ -1,11 +1,14 @@
 .canvas-size-form {
+  color: $white;
   padding: 10px 0;
 
   .size-label {
     font-size: 1.2rem;
+    cursor: pointer;
   }
 
   .size-selection {
     transform: scale(1.3);
+    cursor: pointer;
   }
 }
