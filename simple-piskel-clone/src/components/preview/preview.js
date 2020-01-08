@@ -2,14 +2,9 @@ import elements from '../elements';
 import settings from '../../settings';
 import handleGifSave from './saveGif';
 
-const {
-  fpsSliderInput,
-  displayFpsValue,
-  previewAnimation,
-  exportGif,
-} = elements;
+const { fpsSliderInput, previewAnimation, exportGif } = elements;
 
-export default function preview(fps = 4) {
+export function preview(fps = 4) {
   const { framesImagesArr, previewInterval } = settings;
 
   let imagesCounter = 0;
@@ -40,8 +35,9 @@ export default function preview(fps = 4) {
   }
 }
 
-function handleFpsChange(e) {
+export function handleFpsChange(e) {
   const newFpsValue = e.target.value;
+  const displayFpsValue = document.querySelector('.fps-value');
 
   displayFpsValue.innerHTML = newFpsValue;
   preview(newFpsValue);

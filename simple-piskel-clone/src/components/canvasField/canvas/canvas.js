@@ -2,7 +2,7 @@ import elements from '../../elements';
 import settings from '../../../settings';
 import bresenhamAlgorithm from './bresenhamAlgorithm';
 import drawOnSideFrame from '../../frames/frames';
-import preview from '../../preview/preview';
+import { preview } from '../../preview/preview';
 
 import {
   floodFill,

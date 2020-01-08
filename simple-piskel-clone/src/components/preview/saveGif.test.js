@@ -4,7 +4,6 @@ describe('should replace old link or add new link', () => {
   document.body.innerHTML = testDom;
 
   const { customAppendChild } = require('./saveGif');
-  const previewDiv = document.querySelector('.preview');
 
   const link = document.createElement('a');
   link.className = 'first-link link gif-download';

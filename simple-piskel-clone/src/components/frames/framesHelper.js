@@ -1,6 +1,6 @@
 import elements from '../elements';
 import settings from '../../settings';
-import preview from '../preview/preview';
+import { preview } from '../preview/preview';
 import { handleFrameSelection } from './frames';
 
 export function removeActiveFrameClass() {
