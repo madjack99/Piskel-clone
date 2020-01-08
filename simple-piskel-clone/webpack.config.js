@@ -48,14 +48,14 @@ module.exports = {
     ],
   },
   entry: {
-    index: './src/index.js',
+    piskel: './src/piskel.js',
     landing: './src/landing.js',
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html',
-      filename: './index.html',
-      chunks: ['index'],
+      template: './src/piskel.html',
+      filename: './piskel.html',
+      chunks: ['piskel'],
     }),
     new HtmlWebpackPlugin({
       template: './src/landing.html',
