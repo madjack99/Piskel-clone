@@ -8,7 +8,7 @@ const {
   secondaryColorInput,
 } = elements;
 
-const handleColorChange = (e) => {
+export const handleColorChange = (e) => {
   const clickedColorInput = e.target;
   const selectedColor = e.target.value;
 
