@@ -48,19 +48,19 @@ module.exports = {
     ],
   },
   entry: {
+    index: './src/index.js',
     piskel: './src/piskel.js',
-    landing: './src/landing.js',
   },
   plugins: [
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+      filename: './index.html',
+      chunks: ['index'],
+    }),
     new HtmlWebpackPlugin({
       template: './src/piskel.html',
       filename: './piskel.html',
       chunks: ['piskel'],
-    }),
-    new HtmlWebpackPlugin({
-      template: './src/landing.html',
-      filename: './landing.html',
-      chunks: ['landing'],
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
