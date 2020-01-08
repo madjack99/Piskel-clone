@@ -3,7 +3,7 @@ import elements from '../../elements';
 
 const { drawingToolsArr } = elements;
 
-const handleToolSelection = (e) => {
+export const handleToolSelection = (e) => {
   drawingToolsArr.forEach((node) => {
     node.classList.remove('draw__item_active');
   });
